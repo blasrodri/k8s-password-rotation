@@ -15,3 +15,20 @@ we want to update the password, only the credentials that are not currently bein
 are the ones rotated. This ensures that the application never ends up in a state where
 tries to use old credentials.
 
+Since the password of a user will be updated, the script assumes that the client has root
+access to the database. By default it will retrieve those credentials through `~/.pgpass` file
+(Postgres).
+
+## How to run it
+
+First, modify the `POSTGRES_HOST` environment variable. Eventually we might change this to
+be an command line argument directly.
+
+```sh
+password_update [options] deployment_name
+```
+Where `options` can be:
+```
+-n,--namespace k8s namespace
+-nc,--num-chars number of characters that the password will take. Default is 8.
+```
