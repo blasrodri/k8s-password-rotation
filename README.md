@@ -2,6 +2,9 @@
 
 Script to rotate your passwords and k8s secrets automatically.
 
+This is a very simple project. It may - or may not - suit your needs. For a much more
+battle tesed, and production grade secret rotation try: [Vault Project](https://www.vaultproject.io/)
+
 At the moment, it only supports:
 + Kubernetes
 + Postgres
